@@ -75,26 +75,5 @@ public class InventoryController : ControllerBase
         return Ok(ApiResponse<InventoryItemDto>.Ok(item, "Item updated successfully."));
     }
 
-    [RequirePermission("inventory.delete")]
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        try
-        {
-            await _inventoryService.DeleteAsync(id);
-            return Ok(ApiResponse<object>.Ok(null, "Item deleted successfully."));
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(ApiResponse<object>.Fail(ex.Message));
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(ApiResponse<object>.Fail(ex.Message));
-        }
-        catch (Exception)
-        {
-            return StatusCode(500, ApiResponse<object>.Fail("An unexpected error occurred while deleting the item."));
-        }
-    }
+    
 }
