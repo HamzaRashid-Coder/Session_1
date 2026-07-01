@@ -25,11 +25,11 @@ public class FineRecordDto
     public bool IsPaid { get; set; }
 }
 
-public class FinesSummaryDto
-{
-    public List<FineRecordDto> Unpaid { get; set; } = new();
-    public List<FineRecordDto> Paid { get; set; } = new();
-    public decimal TotalUnpaid { get; set; }
-    public decimal TotalPaid { get; set; }
-    public decimal TotalAssessed { get; set; }
-}
+// public class FinesSummaryDto
+// {
+//     public List<FineRecordDto> Unpaid { get; set; } = new();
+//     public List<FineRecordDto> Paid { get; set; } = new();
+//     public decimal TotalUnpaid { get; set; }
+//     public decimal TotalPaid { get; set; }
+//     public decimal TotalAssessed { get; set; }
+// }
